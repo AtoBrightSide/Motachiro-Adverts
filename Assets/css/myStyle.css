@@ -1,9 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&family=Sriracha&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lemonada&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Play&family=Playfair+Display&display=swap');
+
 body{
 background-color: rgba(200, 200, 200, 1);
+/* font-family: 'Indie Flower', cursive; */
+/* font-family: 'Lemonada', cursive; */
+/* font-family: 'Play', sans-serif; */
+/* font-family: 'Playfair Display', serif; */
 }
 
 .b-logo{
     height: 50px !important;
+    padding: 10% 0 0 10% !important;
 }
 
 .parallax-container {
@@ -15,4 +26,40 @@ background-color: rgba(200, 200, 200, 1);
 
   .parallax-container .section {
     width: 100%;
+}
+
+.b-logo2{
+    height: 100px !important;
+}
+
+.cc .row{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+
+.card-content{
+    padding-bottom: 3%;
+    padding-top: 3%;
+    margin-top: 3%;
+}
+
+.nav-wrapper{
+    background-color: #333 !important;
+}
+
+.carousel-img{
+    height: 300px !important;
+    width: auto !important;
+}
+
+.nav-wrapper{
+    background-color: #333 !important;
+}
+
+.cards-body{
+    background-color: rgb(209, 199, 185) !important;
+}
+
+.cards-body .card-reveal{
+    background-color: rgba(209, 199, 185, 0.95) !important;
 }
