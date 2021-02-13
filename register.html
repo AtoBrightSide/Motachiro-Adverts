@@ -1,155 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="Assets/css/materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="Assets/css/myStyle.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-</head>
-<body style="background-image: url(./Assets/Images/reg_bg.png">
-    <header >
-      <nav>
-        <div class="nav-wrapper">
-          <a href="index.html" class="brand-logo"><img class="b-logo" src="/Assets/Images/Brand6.png" alt="our logo"></a>
-          <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="">Contact us</a></li>
-            <li><a href="">Log-in</a></li>
-          </ul>
-        </div>
-      </nav>
-    
-      <ul class="sidenav" id="mobile-demo">
-        <li><a href="">Contact us</a></li>
-        <li><a href="register.html">register</a></li>
-      </ul>
-    </header>
-    <main>
-      
-      <div class="container center-align">
-        <div class="row">
-            <div class="col m3"></div>
-            <div class="col m6">
-                <div class="card-custom large blue-grey darken-2">
-                    <div class="card-content white-text cc">
-                        
-                        <div class="row">
-                            <div class="col s8 offset-s2"><img class="b-logo2" src="/Assets/Images/Brand6.png" alt=""></div>
-                        </div>
-                        <h4><i class="fas fa-register-alt" style="size: 500px !important;"></i></h4>
-                        <div class="row">
-                          <div class="col s12">
-                            <ul class="tabs center-align blue-grey darken-2">
-                              <li class="tab col s6 center-align"><a class="active red-text text-accent-1" href="#individual-form" >Individual</a></li>
-                              <li class="tab col s6 center-align"><a href="#company-form" class="red-text text-accent-1">Company</a></li>
-                              
-                            </ul>
-                          </div>
-              
-                          <div id="individual-form" class="col s12">
-                              <div class="row">
-                                  <div class="col s8  offset-s2 input-field">
-                                      <input id="fname" type="text" class="validate">
-                                      <label for="fname">First Name</label>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                <div class="col s8  offset-s2 input-field">
-                                    <input id="lname" type="text" class="validate">
-                                    <label for="lname">Last Name</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                              <div class="col s8  offset-s2 input-field">
-                                  <input id="text" type="email" class="validate">
-                                  <label for="text">Username/E-mail</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                                <div class="col s8 offset-s2 input-field">
-                                    <input id="passw" type="password" class="validate">
-                                    <label for="passw">Password</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                              <div class="col s8 offset-s2 input-field">
-                                  <input id="passwor" type="password" class="validate">
-                                  <label for="passwor">Confirm Password</label>
-                              </div>
-                          </div>
-                          <div class="row">
-                            <div class="col s8 offset-s2 input-field">
-                              <p class="grey-text text-lighten-1">If you have an account | <a class="red-text text-accent-1" href="login.html">log-in</a> </p>
-                            </div>
-                        </div>
-                            <div class="row center-align">
-                                <a class="waves-effect waves-light btn red lighten-1">Register</a>
-                            </div>
-                          </div>
-                          <!------------------------------------------------------------------------------------------------->
-                          <div id="company-form" class="col s12">
-                              <div class="row">
-                                  <div class="col s8  offset-s2 input-field">
-                                      <input id="fname" type="text" class="validate">
-                                      <label for="fname">Company Name</label>
-                                  </div>
-                              </div>
-                              <div class="row">
-                                <div class="col s8  offset-s2 input-field">
-                                    <input id="lname" type="text" class="validate">
-                                    <label for="lname">Address</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                              <div class="col s8  offset-s2 input-field">
-                                  <input id="lname" type="tel" class="validate">
-                                  <label for="lname">Telephone</label>
-                              </div>
-                          </div>
-                            <div class="row">
-                              <div class="col s8  offset-s2 input-field">
-                                  <input id="text" type="email" class="validate">
-                                  <label for="text">Company E-mail</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                                <div class="col s8 offset-s2 input-field">
-                                    <input id="pass" type="password" class="validate">
-                                    <label for="pass">Password</label>
-                                </div>
-                            </div>
-                            <div class="row">
-                              <div class="col s8 offset-s2 input-field">
-                                  <input id="password" type="password" class="validate">
-                                  <label for="password">Confirm Password</label>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col s8 offset-s2 input-field">
-                                <p class="grey-text text-lighten-1">If you have an account | <a class="red-text text-accent-1" href="login.html">log-in</a> </p>
-                              </div>
-                          </div>
-                            <div class="row center-align">
-                                <a class="waves-effect waves-light btn yellow-red red lighten-1">Register</a>
-                            </div>
-                          </div>
-                      </div>
-                    </div>
-            </div>
-            <div class="col m3"></div>  
-        </div>
-            
-        
-    </div>
-    </main>
-    <footer>
 
-    </footer>
-    <script src="/Assets/js/jQuery v3.1.5.js"></script>
-    <script src="/Assets/js/materialize/js/materialize.min.js"></script>
-    <script src="/Assets/js/app.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <link rel="stylesheet" href="Assets/css/materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="Assets/css/myStyle.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+</head>
+
+<body style="background-image: url(Assets/Images/reg_bg.png">
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo"><img class="b-logo" src="Assets/Images/Brand6.png" alt="our logo"></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="">Contact us</a></li>
+          <li><a href="">Log-in</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="">Contact us</a></li>
+      <li><a href="register.html">register</a></li>
+    </ul>
+  </header>
+  <main>
+
+    <div class="container center-align">
+      <div class="row">
+        <div class="col m2 s1"></div>
+        <div class="col m8 s10 center-align">
+          <div class="card-custom large blue-grey darken-2">
+            <div class="card-content white-text cc">
+
+              <div class="row">
+                <div class="col s8 offset-s2"><img class="b-logo2" src="Assets/Images/Brand6.png" alt=""></div>
+              </div>
+              <h4><i class="fas fa-register-alt" style="size: 500px !important;"></i></h4>
+              <div class="row">
+                <div class="col s12">
+                  <ul class="tabs center-align blue-grey darken-2">
+                    <li class="tab col s6 center-align"><a class="active red-text text-accent-1"
+                        href="#individual-form">Individual</a></li>
+                    <li class="tab col s6 center-align"><a href="#company-form"
+                        class="red-text text-accent-1">Company</a></li>
+
+                  </ul>
+                </div>
+
+                <div id="individual-form" class="col s12">
+                  <div class="row">
+                    <div class="col s8  offset-s2 input-field">
+                      <input id="fname" type="text" class="validate">
+                      <label for="fname">First Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8  offset-s2 input-field">
+                      <input id="lname" type="text" class="validate">
+                      <label for="lname">Last Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8  offset-s2 input-field">
+                      <input id="email" type="email" class="validate">
+                      <label for="email">Username/E-mail</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8 offset-s2 input-field">
+                      <input id="passIndi" type="password" class="validate">
+                      <label for="passIndi">Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8 offset-s2 input-field">
+                      <input id="confirmIndi" type="password" class="validate">
+                      <label for="confirmIndi">Confirm Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8 offset-s2 input-field">
+                      <p class="grey-text text-lighten-1">If you have an account | <a class="red-text text-accent-1"
+                          href="login.html">log-in</a> </p>
+                    </div>
+                  </div>
+                  <div class="row center-align">
+                    <a class="waves-effect waves-light btn red lighten-1" onclick="regIndividual()">Register</a>
+                  </div>
+                </div>
+                <!------------------------------------------------------------------------------------------------->
+                <div id="company-form" class="col s12">
+                  <div class="row">
+                    <div class="col s8  offset-s2 input-field">
+                      <input id="compName" type="text" class="validate">
+                      <label for="compName">Company Name</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8  offset-s2 input-field">
+                      <input id="add" type="text" class="validate">
+                      <label for="add">Address</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8  offset-s2 input-field">
+                      <input id="tele" type="tel" class="validate">
+                      <label for="tele">Telephone</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8  offset-s2 input-field">
+                      <input id="compEmail" type="email" class="validate">
+                      <label for="compEmail">Company E-mail</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8 offset-s2 input-field">
+                      <input id="passComp" type="password" class="validate">
+                      <label for="passComp">Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8 offset-s2 input-field">
+                      <input id="confirmComp" type="password" class="validate">
+                      <label for="confirmComp">Confirm Password</label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col s8 offset-s2 input-field">
+                      <p class="grey-text text-lighten-1">If you have an account | <a class="red-text text-accent-1"
+                          href="login.html">log-in</a> </p>
+                    </div>
+                  </div>
+                  <div class="row center-align">
+                    <a class="waves-effect waves-light btn yellow-red red lighten-1" onclick="regCompany()">Register</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col m2 s1"></div>
+        </div>
+
+
+      </div>
+  </main>
+  <footer>
+
+  </footer>
+  <script src="Assets/js/jQuery v3.1.5.js"></script>
+  <script src="Assets/js/materialize/js/materialize.min.js"></script>
+  <script src="Assets/js/app.js"></script>
 </body>
+
 </html>

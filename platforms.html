@@ -1,180 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Platforms</title>
-    <link rel="stylesheet" href="Assets/css/materialize/css/materialize.min.css">
-    <link rel="stylesheet" href="./Assets/css/myStyle.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Platforms</title>
+  <link rel="stylesheet" href="Assets/css/materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="./Assets/css/myStyle.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body>
-    <header>
-        <nav>
-            <div class="nav-wrapper">
-              <a href="/index.html" class="brand-logo"><img class="b-logo" src="/Assets/Images/Brand6.png" alt="our logo"></a>
-              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
-              <ul class="right hide-on-med-and-down">
-                <li><a href="">Contact us</a></li>
-                <li><a href="./login.html">Log-out</a></li>
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/index.html" class="brand-logo"><img class="b-logo" src="Assets/Images/Brand6.png" alt="our logo"></a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">dehaze</i></a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="">Contact us</a></li>
+          <li><a href="./login.html">Log-out</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="">Contact us</a></li>
+      <li><a href="./login.html">Log-out</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <div id="index-banner" class="parallax-container">
+      <div class="section no-pad-bot">
+        <div class="container">
+          <br><br>
+          <h1 class="header center blue-text text-lighten-1">Do you have a marketing plan in mind?</h1>
+          <br><br>
+
+        </div>
+      </div>
+      <div class="parallax"><img src="Assets/Images/write-593333_1920.jpg" alt="Unsplashed background img 1"></div>
+    </div>
+
+
+    <div class="container">
+      <div class="card-content white-text cc">
+        <!-- <h4><i class="fas fa-register-alt" style="size: 500px !important;"></i></h4> -->
+        <div class="row">
+          <div class="col s5 offset-s3">
+            <ul class="tabs center-align blue-grey darken-2">
+              <li class="tab col s6 center-align"><a class="active red-text text-accent-1" href="#individual-form">Yes,
+                  I do</a></li>
+              <li class="tab col s6 center-align"><a href="#company-form" class="red-text text-accent-1">No, I do
+                  not</a></li>
+
+            </ul>
+          </div>
+
+          <div id="individual-form" class="col s12 black-text">
+            <div class="row">
+              <div class="col s8  offset-s2 large">
+                <p class="para">
+                  If you already have a plan in progress and only want us to advertise your product, this is the choice
+                  for you. Now all we need is for you to give us information about your company.
+                </p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s8  offset-s2 input-field">
+                <input id="lname" type="text" class="validate">
+                <label for="lname">Company Mottos</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s8 offset-s2 input-field">
+                <input id="passw" type="text" class="validate">
+                <label for="passw">Company Values</label>
+              </div>
+            </div>
+            <div class="row">
+              <div class="container">
+                <p>
+                  Here is where you will be uploading your commercial video:
+                </p>
+                <form action="#">
+                  <div class="file-field input-field">
+                    <div class="btn waves-effect waves-light btn red lighten-1">
+                      <span>File</span>
+                      <input type="file">
+
+                    </div>
+                    <div class="file-path-wrapper">
+                      <input class="file-path validate" type="text" id="fileInput">
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+            <div class="row center-align">
+              <a class="waves-effect waves-light btn red lighten-1">Register</a>
+            </div>
+          </div>
+          <!------------------------------------------------------------------------------------------------->
+          <div id="company-form" class="col s12">
+            <div class="row">
+              <ul class="collapsible popout">
+                <li>
+                  <div class="collapsible-header" style="color: #bbb; background-color: #444;">> Basic Crew</div>
+                  <div class="collapsible-body">
+                    <div class="row">
+                      <div class="col m7">
+                        <img src="Assets/Images/kal-visuals-70VAr3CHugs-unsplash (1).jpg" class="responsive-img" alt="">
+                      </div>
+                      <div class="col m5 grey-text text-darken-2">
+                        <h4>The Basic Crew</h4>
+                        <p>
+                          This is a team of 4. They are specialized in audio, video, story and composition. This is a
+                          perfect deal for you if you are a looking for a budget friendly option.<br><strong
+                            class="grey-text text-darken-2">Price:</strong> $49.99 per hour. <br>
+                          <strong>Crew Info:</strong>
+                          <br>1: Cinematographer<br>2: Compositon Expert<br>3: Audio Engineer <br>4: Story Telling
+                          Expert
+                        </p>
+
+
+                        <a href="" class="waves-effect waves-dark btn red lighten-1">Choose</a>
+                      </div>
+                    </div>
+
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header" style="color: #bbb; background-color: #444;">> Intermediate Crew</div>
+                  <div class="collapsible-body">
+                    <div class="row">
+                      <div class="col m7">
+                        <img src="Assets/Images/gordon-cowie-ocE8laTJ5Kw-unsplash (1).jpg" class="responsive-img"
+                          alt="">
+                      </div>
+                      <div class="col m5">
+                        <h4>The Intermediate Crew</h4>
+                        <hr>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, veniam cupiditate!
+                          Beatae, aut? Labore veniam rerum atque totam nihil voluptas, blanditiis pariatur laborum saepe
+                          aperiam natus dolores, magnam unde repudiandae?</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </li>
+                <li>
+                  <div class="collapsible-header" style="color: #bbb; background-color: #444;">> Advanced Crew</div>
+                  <div class="collapsible-body">
+                    <div class="row">
+                      <div class="col m7">
+                        <img src="Assets/Images/kal-visuals-CDd0uqV34j4-unsplash (1).jpg" class="responsive-img" alt="">
+                      </div>
+                      <div class="col m5">
+                        <h4>The Advanced Crew</h4>
+                        <hr>
+                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, veniam cupiditate!
+                          Beatae, aut? Labore veniam rerum atque totam nihil voluptas, blanditiis pariatur laborum saepe
+                          aperiam natus dolores, magnam unde repudiandae?</p>
+                      </div>
+                    </div>
+
+                  </div>
+                </li>
               </ul>
             </div>
-          </nav>
-        
-          <ul class="sidenav" id="mobile-demo">
-            <li><a href="">Contact us</a></li>
-            <li><a href="./login.html">Log-out</a></li>
-          </ul>
-    </header>
-    
-    <main>
-        <div id="index-banner" class="parallax-container">
-            <div class="section no-pad-bot">
-                <div class="container">
-                <br><br>
-                <h1 class="header center blue-text text-lighten-1">Do you have a marketing plan in mind?</h1>
-                <br><br>
-        
-                </div>
-            </div>
-            <div class="parallax"><img src="Assets/Images/write-593333_1920.jpg" alt="Unsplashed background img 1"></div>
-        </div>
-        
 
-        <div class="container" >
-            <div class="card-content white-text cc">
-                <!-- <h4><i class="fas fa-register-alt" style="size: 500px !important;"></i></h4> -->
-                <div class="row">
-                  <div class="col s5 offset-s3">
-                    <ul class="tabs center-align blue-grey darken-2">
-                      <li class="tab col s6 center-align"><a class="active red-text text-accent-1" href="#individual-form" >Yes, I do</a></li>
-                      <li class="tab col s6 center-align"><a href="#company-form" class="red-text text-accent-1">No, I do not</a></li>
-                      
-                    </ul>
-                  </div>
-      
-                    <div id="individual-form" class="col s12 black-text">
-                      <div class="row">
-                          <div class="col s8  offset-s2 large">
-                            <p class="para">
-                                If you already have a plan in progress and only want us to advertise your product, this is the choice for you. Now all we need is for you to give us information about your company.
-                            </p>
-                          </div>
-                      </div>
-                      <div class="row">
-                        <div class="col s8  offset-s2 input-field">
-                            <input id="lname" type="text" class="validate">
-                            <label for="lname">Company Mottos</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col s8 offset-s2 input-field">
-                            <input id="passw" type="text" class="validate">
-                            <label for="passw">Company Values</label>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="container">
-                            <p>
-                                Here is where you will be uploading your commercial video:
-                            </p>
-                            <form action="#">
-                                <div class="file-field input-field">
-                                  <div class="btn waves-effect waves-light btn red lighten-1">
-                                    <span>File</span>
-                                    <input type="file">
-                                    
-                                  </div>
-                                  <div class="file-path-wrapper">
-                                    <input class="file-path validate" type="text" id="fileInput">
-                                  </div>
-                                </div>
-                              </form>
-                        </div>
-                        
-                    </div>
-                    <div class="row center-align">
-                        <a class="waves-effect waves-light btn red lighten-1">Register</a>
-                    </div>
-                  </div>
-                  <!------------------------------------------------------------------------------------------------->
-                    <div id="company-form" class="col s12">
-                        <div class="row">
-                            <ul class="collapsible popout">
-                                <li>
-                                  <div class="collapsible-header" style="color: #bbb; background-color: #444;"><i class="material-icons">filter_drama</i>Basic Crew</div>
-                                  <div class="collapsible-body">
-                                      <div class="row">
-                                          <div class="col m7">
-                                            <img src="./Assets/Images/kal-visuals-70VAr3CHugs-unsplash (1).jpg" class="responsive-img" alt="">
-                                          </div>
-                                          <div class="col m5">
-                                              <h4>The Basic Crew</h4>
-                                              <hr>
-                                              <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, veniam cupiditate! Beatae, aut? Labore veniam rerum atque totam nihil voluptas, blanditiis pariatur laborum saepe aperiam natus dolores, magnam unde repudiandae?</p>
-                                          </div>
-                                      </div>
-                                      
-                                  </div>
-                                </li>
-                                <li>
-                                  <div class="collapsible-header" style="color: #bbb; background-color: #444;"><i class="material-icons">place</i>Intermediate Crew</div>
-                                  <div class="collapsible-body">
-                                    <div class="row">
-                                        <div class="col m7">
-                                          <img src="./Assets/Images/gordon-cowie-ocE8laTJ5Kw-unsplash (1).jpg" class="responsive-img" alt="">
-                                        </div>
-                                        <div class="col m5">
-                                            <h4>The Intermediate Crew</h4>
-                                            <hr>
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, veniam cupiditate! Beatae, aut? Labore veniam rerum atque totam nihil voluptas, blanditiis pariatur laborum saepe aperiam natus dolores, magnam unde repudiandae?</p>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                </li>
-                                <li>
-                                  <div class="collapsible-header" style="color: #bbb; background-color: #444;"><i class="material-icons">whatshot</i>Advanced Crew</div>
-                                  <div class="collapsible-body">
-                                    <div class="row">
-                                        <div class="col m7">
-                                          <img src="./Assets/Images/kal-visuals-CDd0uqV34j4-unsplash (1).jpg" class="responsive-img" alt="">
-                                        </div>
-                                        <div class="col m5">
-                                            <h4>The Advanced Crew</h4>
-                                            <hr>
-                                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptates, veniam cupiditate! Beatae, aut? Labore veniam rerum atque totam nihil voluptas, blanditiis pariatur laborum saepe aperiam natus dolores, magnam unde repudiandae?</p>
-                                        </div>
-                                    </div>
-                                    
-                                </div>
-                                </li>
-                              </ul>
-                        </div>
-                            
-                    </div>
-              </div>
-    </main>
-
-    <footer>
-        <div class="row">
-            <div class="col s4">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nesciunt illum ut? Optio error cumque neque dolorem iure ad recusandae eum quaerat molestiae nobis fugiat, laboriosam cupiditate voluptate illo vero.
-                </p>
-            </div>
-            <div class="col s4">
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste ipsa quod ratione. Recusandae nihil expedita magnam labore provident? Sed quasi autem ut aliquam perspiciatis dolorum veritatis excepturi ex, explicabo quos.</p>
-            </div>
-            <div class="col s4">
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Et magnam delectus dolorem tenetur reiciendis dignissimos doloremque eveniet consequatur quo ex illum id reprehenderit, laudantium ea, iste quibusdam, harum quisquam vitae.
-                </p>
-            </div>  
+          </div>
         </div>
-    </footer>
-    <script src="Assets/js/jQuery v3.1.5.js"></script>
-    <script src="Assets/js/materialize/js/materialize.min.js"></script>
-    <script src="Assets/js/app.js"></script>
+  </main>
+
+  <footer>
+    <div class="row">
+      <div class="col s4">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nesciunt illum ut? Optio error cumque neque
+          dolorem iure ad recusandae eum quaerat molestiae nobis fugiat, laboriosam cupiditate voluptate illo vero.
+        </p>
+      </div>
+      <div class="col s4">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste ipsa quod ratione. Recusandae nihil expedita
+          magnam labore provident? Sed quasi autem ut aliquam perspiciatis dolorum veritatis excepturi ex, explicabo
+          quos.</p>
+      </div>
+      <div class="col s4">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et magnam delectus dolorem tenetur reiciendis
+          dignissimos doloremque eveniet consequatur quo ex illum id reprehenderit, laudantium ea, iste quibusdam, harum
+          quisquam vitae.
+        </p>
+      </div>
+    </div>
+  </footer>
+  <script src="Assets/js/jQuery v3.1.5.js"></script>
+  <script src="Assets/js/materialize/js/materialize.min.js"></script>
+  <script src="Assets/js/app.js"></script>
 </body>
+
 </html>
