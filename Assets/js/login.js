@@ -4,10 +4,8 @@ var thepword = document.getElementById("password");
 var loginMessage = document.getElementById("loginMessage");
 
 loginButton.addEventListener('click', function () {
-    var trs = DB.transaction(['LoginInfo'], 'readonly');
-    var obj5 = trs.objectStore('LoginInfo');
-
-
+    let trs = DB.transaction(['LoginInfo'], 'readonly');
+    let obj5 = trs.objectStore('LoginInfo');
 
     obj5.openCursor().onsuccess = function (e) {
         var cursor = e.target.result;
@@ -19,12 +17,16 @@ loginButton.addEventListener('click', function () {
                 
             }
             else{
-                let li = document.createElement("li");
-                li.innerHTML = "Incorrect entry, try again?";
+                // let li = document.createElement("p");
+                // li.className = "red-text text-darken-2";
+                // li.innerHTML = "Incorrect entry, try again?";
+                alert("Invalid Entry")
+                thepword.style.borderColor = "red";
+                theuserName.style.borderColor = "red";
                 loginMessage.appendChild(li);
             }
-
             cursor.continue();
+            
         }
     }
 });
