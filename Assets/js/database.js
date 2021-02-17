@@ -26,14 +26,19 @@ else {
       objStore.createIndex('username_Email', 'username_Email', { unique: true });
       objStore.createIndex('password', 'password', { unique: false });
 
-      let objStore = db.createObjectStore('AccountsCompany', { keyPath: 'id', autoIncrement: true });
+      let objStore2 = db.createObjectStore('AccountsCompany', { keyPath: 'id', autoIncrement: true });
 
-      objStore.createIndex('companyName', 'companyName', { unique: true });
-      objStore.createIndex('address', 'address', { unique: true });
-      objStore.createIndex('telephone', 'telephone', { unique: true });
-      objStore.createIndex('company_Email', 'company_Email', { unique: false });
-      objStore.createIndex('password', 'password', { unique: false });
+      objStore2.createIndex('companyName', 'companyName', { unique: true });
+      objStore2.createIndex('compUserName', 'compUserName', { unique: true });
+      objStore2.createIndex('telephone', 'telephone', { unique: true });
+      objStore2.createIndex('company_Email', 'company_Email', { unique: false });
+      objStore2.createIndex('password', 'password', { unique: false });
+      
 
+      let objStore3 = db.createObjectStore('LoginInfo', {keyPath: 'id', autoIncrement: true});
+
+      objStore3.createIndex('username', 'username', {unique: true});
+      objStore3.createIndex('usernamePassword', 'usernamePassword', {unique: true});
 
       console.log('Database ready and fields created!');
 
@@ -51,9 +56,4 @@ else {
 
 
   });
-
-
-
-
-
 }

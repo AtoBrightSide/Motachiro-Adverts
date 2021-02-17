@@ -1,5 +1,4 @@
 function regIndividual() {
-
     let items = document.querySelectorAll(".validate");
     items.forEach(elt => {
         itemsArray.push(elt.value)
@@ -25,6 +24,12 @@ function regIndividual() {
             password: itemsArray[3],
         };
 
+        userInfo = {
+            username : individualData.fname,
+            usernamePassword : individualData.password
+        };
+
+
         if (itemsArray[3] == itemsArray[4]) {
             itemsArray = [];
 
@@ -35,6 +40,7 @@ function regIndividual() {
 
             let tx = DB.transaction(['AccountsIndividual'], 'readwrite');
             let objS = tx.objectStore('AccountsIndividual');
+            
             let req = objS.add(individualData);
 
             req.onsuccess = () => {
@@ -42,7 +48,18 @@ function regIndividual() {
                 items.forEach(elts => {
                     elts.value = '';
                 })
-            }
+            };
+
+            let tx2 = DB.transaction(['LoginInfo'], 'readwrite');
+            let obj2 = tx2.objectStore('LoginInfo');
+            let req2 = obj2.add(userInfo);
+
+            req2.onsuccess = () => {
+                // alert("youve successfuly registered on our site.");
+                items.forEach(elts => {
+                    elts.value = '';
+                })
+            };
         }
         else {
             const passI = document.getElementById("passIndi");

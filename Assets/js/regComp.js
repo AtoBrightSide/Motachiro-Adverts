@@ -19,11 +19,17 @@ function regCompany() {
     else {
         companyData = {
             companyName: itemsArray[5],
-            address: itemsArray[6],
+            compUserName: itemsArray[6],
             telephone: itemsArray[7],
             company_Email: itemsArray[8],
             password: itemsArray[9],
         };
+
+        userInfo = {
+            username : companyData.compUserName,
+            usernamePassword : companyData.password
+        };
+
 
         if (itemsArray[9] == itemsArray[10]) {
             itemsArray = [];
@@ -39,6 +45,16 @@ function regCompany() {
 
             req.onsuccess = () => {
                 alert("youve successfuly registered on our site.");
+                items.forEach(elts => {
+                    elts.value = '';
+                })
+            }
+
+            let tx2 = DB.transaction(['LoginInfo'], 'readwrite');
+            let obj2 = tx2.objectStore('LoginInfo');
+            let req2 = obj2.add(userInfo);
+
+            req2.onsuccess = () => {
                 items.forEach(elts => {
                     elts.value = '';
                 })
