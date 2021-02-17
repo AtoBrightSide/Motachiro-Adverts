@@ -33,8 +33,8 @@ function regIndividual() {
             passI.style.borderColor = 'none';
             confirmI.style.borderColor = 'none';
 
-            let tx = DB.transaction(['Accounts'], 'readwrite');
-            let objS = tx.objectStore('Accounts');
+            let tx = DB.transaction(['AccountsIndividual'], 'readwrite');
+            let objS = tx.objectStore('AccountsIndividual');
             let req = objS.add(individualData);
 
             req.onsuccess = () => {

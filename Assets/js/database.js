@@ -19,12 +19,21 @@ else {
     myDB.onupgradeneeded = function (e) {
       let db = e.target.result;
 
-      let objStore = db.createObjectStore('Accounts', { keyPath: 'id', autoIncrement: true });
+      let objStore = db.createObjectStore('AccountsIndividual', { keyPath: 'id', autoIncrement: true });
 
-      objStore.createIndex('fname', 'fName', { unique: false });
-      objStore.createIndex('lname', 'lName', { unique: false });
-      objStore.createIndex('usernameemail', 'usernameemail', { unique: false });
+      objStore.createIndex('fname', 'fname', { unique: false });
+      objStore.createIndex('lname', 'lname', { unique: false });
+      objStore.createIndex('username_Email', 'username_Email', { unique: true });
       objStore.createIndex('password', 'password', { unique: false });
+
+      let objStore = db.createObjectStore('AccountsCompany', { keyPath: 'id', autoIncrement: true });
+
+      objStore.createIndex('companyName', 'companyName', { unique: true });
+      objStore.createIndex('address', 'address', { unique: true });
+      objStore.createIndex('telephone', 'telephone', { unique: true });
+      objStore.createIndex('company_Email', 'company_Email', { unique: false });
+      objStore.createIndex('password', 'password', { unique: false });
+
 
       console.log('Database ready and fields created!');
 
