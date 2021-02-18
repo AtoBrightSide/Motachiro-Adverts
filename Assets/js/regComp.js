@@ -26,8 +26,7 @@ function regCompany() {
         };
 
         userInfo = {
-            username : companyData.compUserName,
-            usernamePassword : companyData.password
+            userLogin : companyData.compUserName + "*" + companyData.password,
         };
 
 

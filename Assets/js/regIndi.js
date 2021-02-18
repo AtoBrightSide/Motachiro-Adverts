@@ -25,8 +25,7 @@ function regIndividual() {
         };
 
         userInfo = {
-            username : individualData.fname,
-            usernamePassword : individualData.password
+            userLogin : individualData.fname + "*" + individualData.password,
         };
 
 

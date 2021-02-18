@@ -20,26 +20,28 @@ else {
       let db = e.target.result;
 
       let objStore = db.createObjectStore('AccountsIndividual', { keyPath: 'id', autoIncrement: true });
-
       objStore.createIndex('fname', 'fname', { unique: false });
       objStore.createIndex('lname', 'lname', { unique: false });
       objStore.createIndex('username_Email', 'username_Email', { unique: true });
       objStore.createIndex('password', 'password', { unique: false });
 
       let objStore2 = db.createObjectStore('AccountsCompany', { keyPath: 'id', autoIncrement: true });
-
       objStore2.createIndex('companyName', 'companyName', { unique: true });
       objStore2.createIndex('compUserName', 'compUserName', { unique: true });
       objStore2.createIndex('telephone', 'telephone', { unique: true });
       objStore2.createIndex('company_Email', 'company_Email', { unique: false });
       objStore2.createIndex('password', 'password', { unique: false });
       
-
       let objStore3 = db.createObjectStore('LoginInfo', {keyPath: 'id', autoIncrement: true});
+      objStore3.createIndex('userLogin', 'userLogin', {unique: true});
 
-      objStore3.createIndex('username', 'username', {unique: true});
-      objStore3.createIndex('usernamePassword', 'usernamePassword', {unique: true});
+      let objStore4 = db.createObjectStore('ProfileInfo', { keyPath: 'id', autoIncrement: true});
+      objStore4.createIndex('username', 'username', {unique: true});
+      objStore4.createIndex('adsMade', 'adsMade', {unique: true});
 
+      let objStore5 = db.createObjectStore('MarketingPlan', {keyPath: 'id', autoIncrement: true});
+      objStore5.createIndex('username', 'username', {unique: true});
+      // objStore5.createIndex('adsM')
       console.log('Database ready and fields created!');
 
     }

@@ -1,10 +1,36 @@
+import { theuserName } from './login.js';
+import { thepword } from './login.js';
 
+// import * as p from 'login.js';
 function myProfile() {
-    let t = DB.transaction(['LoginInfo'], 'readonly');
-    let obj5 = t.objectStore('LoginInfo');
-    let res = obj5.get(username);
-    // console.log(res);
-    alert(res);
-}
+    let trs = DB.transaction(['LoginInfo'], 'readonly');
+    let obj5 = trs.objectStore('LoginInfo');
 
-myProfile();
+    obj5.openCursor().onsuccess = function (e) {
+        var cursor = e.target.result;
+        let u = cursor.value.userLogin.split("*");
+        let uN = u[0];
+        let pN = u[1];
+        if (cursor){
+            // if (cursor.value.username == )
+            if((uN==theuserName.value) && (pN==thepword.value)){
+                // console.log("there it is")
+                location.assign("accounts.html");
+                // export { theuserName };
+            }
+            else{
+                // let li = document.createElement("p");
+                // li.className = "red-text text-darken-2";
+                // li.innerHTML = "Incorrect entry, try again?";
+                alert("Invalid Entry")
+                thepword.style.borderColor = "red";
+                theuserName.style.borderColor = "red";
+                loginMessage.appendChild(li);
+            }
+            cursor.continue();
+            
+        }
+    }
+}
+// myProfile()
+setTimeout(myProfile, 3000); 
