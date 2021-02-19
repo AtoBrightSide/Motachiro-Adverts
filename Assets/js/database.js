@@ -8,6 +8,7 @@ window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.ms
 let itemsArray = [];
 let fieldsArray = [];
 let DB;
+
 if (!window.indexedDB) {
   alert("You're browser doesn't support a stable release of indexedDB");
 }
@@ -15,7 +16,6 @@ if (!window.indexedDB) {
 else {
   document.addEventListener('DOMContentLoaded', () => {
     let myDB = indexedDB.open('MC Adverts', 1);
-
     myDB.onupgradeneeded = function (e) {
       let db = e.target.result;
 
@@ -41,14 +41,15 @@ else {
 
       let objStore5 = db.createObjectStore('MarketingPlan', {keyPath: 'id', autoIncrement: true});
       objStore5.createIndex('username', 'username', {unique: true});
-      // objStore5.createIndex('adsM')
-      console.log('Database ready and fields created!');
-
+      
+      let objStore6 = db.createObjectStore('AdminInfo', {keyPath: 'id', autoIncrement: true});
+      objStore6.createIndex('adminID', 'adminID', {unique: true});
+      objStore6.createIndex('adminPass', 'adminPass', {unique: true});
     }
 
     myDB.onsuccess = () => {
       DB = myDB.result;
-      console.log("Database ready");
+      console.log("Database ready and fields created!");
 
     };
 
@@ -57,5 +58,6 @@ else {
     };
 
 
+    
   });
 }
