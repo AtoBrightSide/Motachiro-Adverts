@@ -22,13 +22,12 @@ function regCompany() {
             compUserName: itemsArray[6],
             telephone: itemsArray[7],
             company_Email: itemsArray[8],
-            password: itemsArray[9],
+            password: simpleEncrypt(itemsArray[9])
         };
 
         userInfo = {
-            userLogin : companyData.compUserName + "*" + companyData.password,
+            userLogin: companyData.compUserName + "*" + companyData.password,
         };
-
 
         if (itemsArray[9] == itemsArray[10]) {
             itemsArray = [];

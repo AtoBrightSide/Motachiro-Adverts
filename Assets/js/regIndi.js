@@ -21,11 +21,11 @@ function regIndividual() {
             fname: itemsArray[0],
             lname: itemsArray[1],
             username_Email: itemsArray[2],
-            password: itemsArray[3],
+            password: simpleEncrypt(itemsArray[3]),
         };
 
         userInfo = {
-            userLogin : individualData.fname + "*" + individualData.password,
+            userLogin: individualData.fname + "*" + individualData.password,
         };
 
 
@@ -39,7 +39,7 @@ function regIndividual() {
 
             let tx = DB.transaction(['AccountsIndividual'], 'readwrite');
             let objS = tx.objectStore('AccountsIndividual');
-            
+
             let req = objS.add(individualData);
 
             req.onsuccess = () => {

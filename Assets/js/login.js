@@ -27,7 +27,7 @@ loginButton.addEventListener('click', function (e) {
             let u = cursor.value.userLogin.split("*");
             let uN = u[0];
             let pN = u[1];
-            if ((uN == theuserName.value) && (pN == thepword.value)) {
+            if ((uN == theuserName.value) && (simpleDecrypt(pN) == thepword.value)) {
                 // console.log("there it is")
                 location.assign("accounts.html")
                 theuserName.value = '';
@@ -75,7 +75,7 @@ loginButtonAdmin.addEventListener('click', function (e) {
         var cursor = e.target.result;
 
         if (cursor) {
-            if ((cursor.value.adminID == theAdmin.value) && (cursor.value.adminPass == theAdminPass.value)) {
+            if ((cursor.value.adminID == theAdmin.value) && (simpleDecrypt(cursor.value.adminPass) == theAdminPass.value)) {
                 // console.log("there it is")
                 location.assign("admin.html")
                 theuserName.value = '';
@@ -84,7 +84,7 @@ loginButtonAdmin.addEventListener('click', function (e) {
                 actualLength = 0;
                 return 0;
             }
-            else    actualLength++;
+            else actualLength++;
             cursor.continue();
         }
         else {
