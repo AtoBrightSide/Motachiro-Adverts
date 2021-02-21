@@ -1,6 +1,3 @@
-//authorization js file
-var loginButton = document.getElementById("loginButton");
-var loginButtonAdmin = document.getElementById("loginButtonAdmin");
 var theuserName = document.getElementById("email");
 var thepword = document.getElementById("password");
 var theAdmin = document.getElementById("idAdmin");
@@ -10,8 +7,13 @@ var loginMessage = document.getElementById("loginMessage");
 var count = 0;
 var actualLength = 0;
 
-loginButton.addEventListener('click', function (e) {
-    e.preventDefault();
+var n = {
+    name : "Hello",
+    type : ""
+};
+
+function loginUser() {
+    // e.preventDefault();
     let trs = DB.transaction(['LoginInfo'], 'readonly');
     let obj5 = trs.objectStore('LoginInfo');
     var res = obj5.count();
@@ -28,19 +30,16 @@ loginButton.addEventListener('click', function (e) {
             let uN = u[0];
             let pN = u[1];
             if ((uN == theuserName.value) && (simpleDecrypt(pN) == thepword.value)) {
-                // console.log("there it is")
-                location.assign("accounts.html")
                 theuserName.value = '';
                 thepword.value = '';
                 count = 0;
                 actualLength = 0;
+                n.newName = "user";
+                location.assign('accounts.html');
                 return 0;
             }
 
-            else {
-
-                actualLength++
-            }
+            else        actualLength++
             cursor.continue();
         }
         else {
@@ -56,13 +55,10 @@ loginButton.addEventListener('click', function (e) {
         }
 
     };
+}
 
-
-
-});
-
-loginButtonAdmin.addEventListener('click', function (e) {
-    e.preventDefault();
+function loginAdmin() {
+    // e.preventDefault();
     let trs = DB.transaction(['AdminInfo'], 'readonly');
     let obj5 = trs.objectStore('AdminInfo');
     var res = obj5.count();
@@ -77,11 +73,13 @@ loginButtonAdmin.addEventListener('click', function (e) {
         if (cursor) {
             if ((cursor.value.adminID == theAdmin.value) && (simpleDecrypt(cursor.value.adminPass) == theAdminPass.value)) {
                 // console.log("there it is")
-                location.assign("admin.html")
+                // location.assign("admin.html")
                 theuserName.value = '';
                 thepword.value = '';
                 count = 0;
                 actualLength = 0;
+                n.name = "admin";
+                location.assign('accounts.html');
                 return 0;
             }
             else actualLength++;
@@ -101,4 +99,6 @@ loginButtonAdmin.addEventListener('click', function (e) {
 
     };
 
-});
+}
+
+function profileChecker()       {     console.log("what"); return n.name;   }

@@ -45,6 +45,7 @@ else {
       let objStore6 = db.createObjectStore('AdminInfo', {keyPath: 'id', autoIncrement: true});
       objStore6.createIndex('adminID', 'adminID', {unique: true});
       objStore6.createIndex('adminPass', 'adminPass', {unique: true});
+      objStore6.createIndex('adminName', 'adminName', {keyPath: 'id'});
     }
 
     myDB.onsuccess = () => {

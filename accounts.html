@@ -30,20 +30,19 @@
         </nav>
 
         <ul class="sidenav" id="mobile-demo">
-            <li><i class="large material-icons">account_circle</i><a href="">Username</a></li>
+            <li><i class="large material-icons">account_circle</i><a href="#" class="profileName"></a></li>
             <li><a href="">Contact Us</a></li>
             <li><a href="login.html">Log-out</a></li>
         </ul>
     </header>
 
     <main>
-
-        <h1 class="header center blue-text text-lighten-1">You haven't made any advertisements yet!</h1>
-        <h4 class="center blue-text text-lighten-1">But don't worry we'll help you get your first commercial right away
-        </h4>
-        <br>
-        <br>
-
+        <div class="profileStatus">
+            <h1 class="header center blue-text text-lighten-1" id="accountHeader">You haven't made any advertisements yet!</h1>
+            <h4 class="center blue-text text-lighten-1" id="accountMiniHeader">But don't worry we'll help you get your first commercial right away</h4>
+        </div>
+        
+        <br> <br>
 
         <div class="container" style="background: transparent;">
             <h4 class="center grey-text text-darken-1">Our Available Platforms</h4>
@@ -276,7 +275,6 @@
                 </div>
             </div>
         </div>
-
     </main>
 
     <footer class="page-footer grey darken-3">
@@ -312,8 +310,8 @@
     <script src="Assets/js/inits.js" ></script>
     <script src="Assets/js/materialize/js/materialize.min.js"></script>
     <script src="Assets/js/database.js"></script>
-    <!-- <script src="Assets/js/login.js"></script> -->
-    <!-- <script src="Assets/js/accounts.js"></script> -->
+    <script src="Assets/js/login.js"></script>
+    <script src="Assets/js/accounts.js"></script>
     
 </body>
 
