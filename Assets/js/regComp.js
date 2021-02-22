@@ -57,10 +57,6 @@ function regCompany() {
             let obj2 = tx2.objectStore('LoginInfo');
             let req2 = obj2.add(userInfo);
 
-            let tx2 = DB.transaction(['LoginInfo'], 'readwrite');
-            let obj2 = tx2.objectStore('LoginInfo');
-            let req2 = obj2.add(userInfo);
-
             req2.onsuccess = () => {
                 items.forEach(elts => {
                     elts.value = '';

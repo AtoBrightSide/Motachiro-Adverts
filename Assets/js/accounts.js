@@ -1,18 +1,18 @@
 console.log(n.newName);
 // setTimeout(showAdmin, 3000);
 // (p=="user")?showUser() : showAdmin();
-setTimeout(users, 1000);
+// setTimeout(users, 1000);
 function showUser() {
     
     
 }
 
 function showAdmin() {
-    document.querySelector('.container').innerHTML = " ";
+    document.querySelector('#container').innerHTML = " ";
     document.getElementById('accountHeader').innerHTML = "Admin Page Home"
     document.getElementById('accountMiniHeader').innerHTML = "Users here are: " + users();
-    document.querySelector('.container').innerHTML = " ";
-    console.log(" its an admin");
+    // console.log(" its an admin");
+
 }
 
 function users(){
@@ -26,10 +26,18 @@ function users(){
             cursor.continue();
         }
     }
-    
+    console.log(clientInfo());
     return ourClients;
 }
 
 function clientInfo(){
-    let websitesChosen = document.getElementById('fb_checkbox');
+    // let platformChooseButton = document.getElementById('choosePlatforms');
+    // let websitesChosen = document.getElementById('fb_checkbox');
+    let platformsArray = [];
+    const platforms = document.querySelectorAll('input[name="platform"]:checked');
+    platforms.forEach(element => {
+        platformsArray.push(element.value);
+    });
+    console.log(platformsArray);
+    
 }
