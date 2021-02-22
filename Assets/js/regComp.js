@@ -29,6 +29,11 @@ function regCompany() {
             userLogin: companyData.compUserName + "*" + companyData.password,
         };
 
+        client = {
+            username : companyData.compUserName,
+            
+        }
+
         if (itemsArray[9] == itemsArray[10]) {
             itemsArray = [];
 
@@ -47,6 +52,10 @@ function regCompany() {
                     elts.value = '';
                 })
             }
+
+            let tx2 = DB.transaction(['LoginInfo'], 'readwrite');
+            let obj2 = tx2.objectStore('LoginInfo');
+            let req2 = obj2.add(userInfo);
 
             let tx2 = DB.transaction(['LoginInfo'], 'readwrite');
             let obj2 = tx2.objectStore('LoginInfo');
