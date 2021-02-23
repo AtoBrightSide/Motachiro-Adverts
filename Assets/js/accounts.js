@@ -1,7 +1,5 @@
-console.log(n.newName);
-// setTimeout(showAdmin, 3000);
-// (p=="user")?showUser() : showAdmin();
-// setTimeout(users, 1000);
+
+setTimeout(showAdmin, 100);
 function showUser() {
     
     
@@ -10,34 +8,44 @@ function showUser() {
 function showAdmin() {
     document.querySelector('#container').innerHTML = " ";
     document.getElementById('accountHeader').innerHTML = "Admin Page Home"
-    document.getElementById('accountMiniHeader').innerHTML = "Users here are: " + users();
+    document.getElementById('accountMiniHeader').innerHTML = " ";
     // console.log(" its an admin");
-
+    let cl = document.getElementById('cL');
+    
+    let output = ``;
+    let theUsers = allUsers();
+    console.log(theUsers);
+    theUsers.forEach(element => {
+    
+        output += `<li class="collection-item">${element}</li>`;    
+    });
+    
+    cl.innerHTML = output;
 }
 
-function users(){
-    let ourClients = "";
-    let trs = DB.transaction(['AccountsCompany'], 'readonly').objectStore('AccountsCompany');
+function allUsers(){
+    let ourClients = [];
+    let trs = DB.transaction(['Clients'], 'readonly').objectStore('Clients');
     trs.openCursor().onsuccess = function (e) {
         var cursor = e.target.result;
         if(cursor){
-            // ourClients += ;
-            console.log("hello"+cursor.value.companyName);
+            ourClients.push(cursor.value.username);
             cursor.continue();
         }
     }
-    console.log(clientInfo());
     return ourClients;
 }
 
-function clientInfo(){
-    // let platformChooseButton = document.getElementById('choosePlatforms');
-    // let websitesChosen = document.getElementById('fb_checkbox');
+function platformsChosen(){
     let platformsArray = [];
     const platforms = document.querySelectorAll('input[name="platform"]:checked');
     platforms.forEach(element => {
         platformsArray.push(element.value);
     });
     console.log(platformsArray);
-    
+    return platformsArray;   
+}
+
+function buttonClicked() {
+    location.assign('platforms.html');
 }

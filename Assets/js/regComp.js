@@ -31,7 +31,6 @@ function regCompany() {
 
         client = {
             username : companyData.compUserName,
-            
         }
 
         if (itemsArray[9] == itemsArray[10]) {
@@ -58,6 +57,15 @@ function regCompany() {
             let req2 = obj2.add(userInfo);
 
             req2.onsuccess = () => {
+                items.forEach(elts => {
+                    elts.value = '';
+                })
+            }
+            let tx3 = DB.transaction(['Clients'], 'readwrite');
+            let obj3 = tx3.objectStore('Clients');
+            let req3 = obj3.add(client);
+
+            req3.onsuccess = () => {
                 items.forEach(elts => {
                     elts.value = '';
                 })

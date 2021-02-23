@@ -7,11 +7,6 @@ var loginMessage = document.getElementById("loginMessage");
 var count = 0;
 var actualLength = 0;
 
-var n = {
-    name : "Hello",
-    type : ""
-};
-
 function loginUser() {
     // e.preventDefault();
     let trs = DB.transaction(['LoginInfo'], 'readonly');
@@ -34,7 +29,7 @@ function loginUser() {
                 thepword.value = '';
                 count = 0;
                 actualLength = 0;
-                n.newName = "user";
+                // n.newName = "user";
                 location.assign('accounts.html');
                 return 0;
             }
@@ -78,7 +73,7 @@ function loginAdmin() {
                 thepword.value = '';
                 count = 0;
                 actualLength = 0;
-                n.name = "admin";
+                // n.name = "admin";
                 location.assign('accounts.html');
                 return 0;
             }
@@ -101,4 +96,4 @@ function loginAdmin() {
 
 }
 
-function profileChecker()       {     console.log("what"); return n.name;   }
+// function profileChecker()       {     console.log("what"); return n.name;   }

@@ -27,7 +27,10 @@ function regIndividual() {
         userInfo = {
             userLogin: individualData.fname + "*" + individualData.password,
         };
-
+        
+        client = {
+            username: individualData.fname,
+        }
 
         if (itemsArray[3] == itemsArray[4]) {
             itemsArray = [];
@@ -59,6 +62,16 @@ function regIndividual() {
                     elts.value = '';
                 })
             };
+
+            let tx3 = DB.transaction(['Clients'], 'readwrite');
+            let obj3 = tx3.objectStore('Clients');
+            let req3 = obj3.add(client);
+
+            req3.onsuccess = () => {
+                items.forEach(elts => {
+                    elts.value = '';
+                })
+            }
         }
         else {
             const passI = document.getElementById("passIndi");

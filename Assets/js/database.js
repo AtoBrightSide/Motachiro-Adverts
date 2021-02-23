@@ -39,14 +39,15 @@ else {
       objStore4.createIndex('username', 'username', {unique: true});
       objStore4.createIndex('adsMade', 'adsMade', {unique: false});
       objStore4.createIndex('packageUsed', 'packageUsed', {unique: false});
-
-      let objStore5 = db.createObjectStore('MarketingPlan', {keyPath: 'id', autoIncrement: true});
-      objStore5.createIndex('username', 'username', {unique: true});
+      objStore4.createIndex('platformsUsed','platformsUsed', {unique: false});
       
+      let objStore5 = db.createObjectStore('Clients', { keyPath: 'id', autoIncrement: true});
+      objStore5.createIndex('username', 'username', {unique: true});
+
       let objStore6 = db.createObjectStore('AdminInfo', {keyPath: 'id', autoIncrement: true});
       objStore6.createIndex('adminID', 'adminID', {unique: true});
       objStore6.createIndex('adminPass', 'adminPass', {unique: true});
-      objStore6.createIndex('adminName', 'adminName', {keyPath: 'id'});
+      objStore6.createIndex('adminName', 'adminName', {unique: false});
     }
 
     myDB.onsuccess = () => {
