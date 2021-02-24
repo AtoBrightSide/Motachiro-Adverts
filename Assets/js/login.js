@@ -67,14 +67,12 @@ function loginAdmin() {
 
         if (cursor) {
             if ((cursor.value.adminID == theAdmin.value) && (simpleDecrypt(cursor.value.adminPass) == theAdminPass.value)) {
-                // console.log("there it is")
-                // location.assign("admin.html")
                 theuserName.value = '';
                 thepword.value = '';
                 count = 0;
                 actualLength = 0;
-                // n.name = "admin";
-                location.assign('accounts.html');
+
+                location.assign('admin.html');
                 return 0;
             }
             else actualLength++;
@@ -95,5 +93,3 @@ function loginAdmin() {
     };
 
 }
-
-// function profileChecker()       {     console.log("what"); return n.name;   }

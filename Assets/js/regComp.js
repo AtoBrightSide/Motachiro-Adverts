@@ -46,7 +46,7 @@ function regCompany() {
             let req = objS.add(companyData);
 
             req.onsuccess = () => {
-                alert("youve successfuly registered on our site.");
+                alert("You've successfully registered on our site.");
                 items.forEach(elts => {
                     elts.value = '';
                 })
@@ -79,7 +79,6 @@ function regCompany() {
             confirmC.style.borderColor = "red";
             console.log("Sorry but the passwords do not match.");
             itemsArray = [];
-
         }
     }
 
