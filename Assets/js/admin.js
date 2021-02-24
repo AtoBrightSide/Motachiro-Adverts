@@ -10,6 +10,7 @@ function showAdmin() {
 function elUsers(names){
     let cl = document.getElementById('cL');
     cl.innerHTML += `<li class="collection-item">${names}</li>`;
+    let cl2 = document.getElementById('')
 }
 
 function allUsers(){

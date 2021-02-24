@@ -37,7 +37,6 @@ else {
 
       let objStore4 = db.createObjectStore('ProfileInfo', { keyPath: 'id', autoIncrement: true});
       objStore4.createIndex('username', 'username', {unique: true});
-      objStore4.createIndex('adsMade', 'adsMade', {unique: false});
       objStore4.createIndex('packageUsed', 'packageUsed', {unique: false});
       objStore4.createIndex('platformsUsed','platformsUsed', {unique: false});
       

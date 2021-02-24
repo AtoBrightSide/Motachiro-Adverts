@@ -7,3 +7,7 @@ const prof = {
     platformsUsed: 
 }
 
+function choices(){
+    
+}
+
