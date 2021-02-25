@@ -13,8 +13,8 @@ if (!window.indexedDB) {
   alert("You're browser doesn't support a stable release of indexedDB");
 }
 
-else {
-  document.addEventListener('DOMContentLoaded', () => {
+
+document.addEventListener('DOMContentLoaded', () => {
     let myDB = indexedDB.open('MC Adverts', 1);
     myDB.onupgradeneeded = function (e) {
       let db = e.target.result;
@@ -51,14 +51,45 @@ else {
     myDB.onsuccess = () => {
       DB = myDB.result;
       console.log("Database ready and fields created!");
-
     };
 
     myDB.onerror = () => {
       console.log('There was an error');
-    };
+    };  
+});
 
+function createUser(objName, store, mode){
+  let tx = DB.transaction([store], mode);
+  let objS = tx.objectStore(store);
 
-    
-  });
+  let req = objS.add(objName);
+
+  req.onsuccess = () => {
+      alert("youve successfuly registered on our site.");
+      // items.forEach(elts => {
+      //     elts.value = '';
+      // })
+  };
 }
+
+function loginInfo(userInfo){
+  let tx2 = DB.transaction(['LoginInfo'], 'readwrite');
+  let obj2 = tx2.objectStore('LoginInfo');
+  let req2 = obj2.add(userInfo);
+  req2.onsuccess = () => {
+    // items.forEach(elts => {
+    //     elts.value = '';
+    // })
+  };
+}
+
+function clientInfo(client) {
+  let tx3 = DB.transaction(['ProfileInfo'], 'readwrite');
+  let obj3 = tx3.objectStore('ProfileInfo');
+  let req3 = obj3.add(client);
+
+  // req3.onsuccess = () => {
+  //     items.forEach(elts => {
+  //         elts.value = '';
+  //     })
+  }

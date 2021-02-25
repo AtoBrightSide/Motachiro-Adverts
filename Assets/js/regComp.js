@@ -1,8 +1,8 @@
-function regFromHome(platform){
-    return platform;
-}
+function regFromHome1(){    regCompany('Basic');            }
+function regFromHome2(){    regCompany('Intermediate');     }
+function regFromHome3(){    regCompany('Advanced');         }
 
-function regCompany() {
+function regCompany(pt) {
     let items = document.querySelectorAll(".validate");
     items.forEach(elt => {
         itemsArray.push(elt.value)
@@ -38,59 +38,20 @@ function regCompany() {
 
         proinfo = {
             username: companyData.compUserName,
-            packageUsed: "",
+            packageUsed: pt,
         }
-        platform = regFromHome();
-        (platform=1)?proinfo.packageUsed="Basic":(platform=2)?proinfo.packageUsed="Intermediate":proinfo.packageUsed="Advanced";
 
         if (itemsArray[9] == itemsArray[10]) {
             itemsArray = [];
-
             const passC = document.getElementById("passComp");
             const confirmC = document.getElementById("confirmComp");
             passC.style.borderColor = 'none';
             confirmC.style.borderColor = 'none';
 
-            let tx = DB.transaction(['AccountsCompany'], 'readwrite');
-            let objS = tx.objectStore('AccountsCompany');
-            let req = objS.add(companyData);
-
-            req.onsuccess = () => {
-                alert("You've successfully registered on our site.");
-                items.forEach(elts => {
-                    elts.value = '';
-                })
-            }
-
-            let tx2 = DB.transaction(['LoginInfo'], 'readwrite');
-            let obj2 = tx2.objectStore('LoginInfo');
-            let req2 = obj2.add(userInfo);
-
-            req2.onsuccess = () => {
-                items.forEach(elts => {
-                    elts.value = '';
-                })
-            }
-            let tx3 = DB.transaction(['Clients'], 'readwrite');
-            let obj3 = tx3.objectStore('Clients');
-            let req3 = obj3.add(client);
-
-            req3.onsuccess = () => {
-                items.forEach(elts => {
-                    elts.value = '';
-                })
-            }
-            let tx4 = DB.transaction(['ProfileInfo'], 'readwrite');
-            let obj4 = tx4.objectStore('ProfileInfo');
-            let req4 = obj4.add(proinfo);
-
-            req4.onsuccess = () => {
-                items.forEach(elts => {
-                    elts.value = '';
-                })
-            }
+            createUser(companyData, 'AccountsCompany','readwrite');
+            loginInfo(userInfo);
+            clientInfo(proinfo);
         }
-
         else {
             const passC = document.getElementById("passComp");
             const confirmC = document.getElementById("confirmComp");
@@ -100,7 +61,4 @@ function regCompany() {
             itemsArray = [];
         }
     }
-
-
-
 }

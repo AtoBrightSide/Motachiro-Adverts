@@ -3,34 +3,25 @@ setTimeout(showAdmin, 100);
 function showAdmin() {
     document.getElementById('accountHeader').innerHTML = "Admin Page Home"
     document.getElementById('accountMiniHeader').innerHTML = " ";
-    // console.log(" its an admin");
     allUsers();
 }
 
-function elUsers(names){
+function elUsers(names, pck){
     let cl = document.getElementById('cL');
     cl.innerHTML += `<li class="collection-item">${names}</li>`;
-    let cl2 = document.getElementById('')
+    let cl2 = document.getElementById('cL2');
+    cl2.innerHTML += `<li class="collection-item">${pck}</li>`;
 }
 
 function allUsers(){
-    let trs = DB.transaction(['Clients'], 'readonly').objectStore('Clients');
-    trs.openCursor().onsuccess = function (e) {
-        var cursor = e.target.result;
-        if(cursor){
-            elUsers(cursor.value.username);
-            cursor.continue();
-        }
-    }
-    let trs2 = DB.transaction(['Clients'], 'readonly').objectStore('Clients');
+    let trs2 = DB.transaction(['ProfileInfo'], 'readonly').objectStore('ProfileInfo');
     trs2.openCursor().onsuccess = function (e) {
         var cursor = e.target.result;
         if(cursor){
-            elUsers(cursor.value.username);
+            elUsers(cursor.value.username, cursor.value.packageUsed);
             cursor.continue();
         }
     }
-
 }
 
 function platformsChosen(){

@@ -27,51 +27,17 @@ function regIndividual() {
         userInfo = {
             userLogin: individualData.fname + "*" + individualData.password,
         };
-        
-        client = {
-            username: individualData.fname,
-        }
 
         if (itemsArray[3] == itemsArray[4]) {
             itemsArray = [];
+
+            createUser(individualData, 'AccountsIndividual','readwrite');
+            loginInfo(userInfo);
 
             const passI = document.getElementById("passIndi");
             const confirmI = document.getElementById("confirmIndi");
             passI.style.borderColor = 'none';
             confirmI.style.borderColor = 'none';
-
-            let tx = DB.transaction(['AccountsIndividual'], 'readwrite');
-            let objS = tx.objectStore('AccountsIndividual');
-
-            let req = objS.add(individualData);
-
-            req.onsuccess = () => {
-                alert("youve successfuly registered on our site.");
-                items.forEach(elts => {
-                    elts.value = '';
-                })
-            };
-
-            let tx2 = DB.transaction(['LoginInfo'], 'readwrite');
-            let obj2 = tx2.objectStore('LoginInfo');
-            let req2 = obj2.add(userInfo);
-
-            req2.onsuccess = () => {
-                // alert("youve successfuly registered on our site.");
-                items.forEach(elts => {
-                    elts.value = '';
-                })
-            };
-
-            let tx3 = DB.transaction(['Clients'], 'readwrite');
-            let obj3 = tx3.objectStore('Clients');
-            let req3 = obj3.add(client);
-
-            req3.onsuccess = () => {
-                items.forEach(elts => {
-                    elts.value = '';
-                })
-            }
         }
         else {
             const passI = document.getElementById("passIndi");
