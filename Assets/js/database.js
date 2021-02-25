@@ -38,7 +38,6 @@ else {
       let objStore4 = db.createObjectStore('ProfileInfo', { keyPath: 'id', autoIncrement: true});
       objStore4.createIndex('username', 'username', {unique: true});
       objStore4.createIndex('packageUsed', 'packageUsed', {unique: false});
-      objStore4.createIndex('platformsUsed','platformsUsed', {unique: false});
       
       let objStore5 = db.createObjectStore('Clients', { keyPath: 'id', autoIncrement: true});
       objStore5.createIndex('username', 'username', {unique: true});

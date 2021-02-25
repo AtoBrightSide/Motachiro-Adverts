@@ -1,5 +1,8 @@
-function regCompany() {
+function regFromHome(platform){
+    return platform;
+}
 
+function regCompany() {
     let items = document.querySelectorAll(".validate");
     items.forEach(elt => {
         itemsArray.push(elt.value)
@@ -32,6 +35,13 @@ function regCompany() {
         client = {
             username : companyData.compUserName,
         }
+
+        proinfo = {
+            username: companyData.compUserName,
+            packageUsed: "",
+        }
+        platform = regFromHome();
+        (platform=1)?proinfo.packageUsed="Basic":(platform=2)?proinfo.packageUsed="Intermediate":proinfo.packageUsed="Advanced";
 
         if (itemsArray[9] == itemsArray[10]) {
             itemsArray = [];
@@ -66,6 +76,15 @@ function regCompany() {
             let req3 = obj3.add(client);
 
             req3.onsuccess = () => {
+                items.forEach(elts => {
+                    elts.value = '';
+                })
+            }
+            let tx4 = DB.transaction(['ProfileInfo'], 'readwrite');
+            let obj4 = tx4.objectStore('ProfileInfo');
+            let req4 = obj4.add(proinfo);
+
+            req4.onsuccess = () => {
                 items.forEach(elts => {
                     elts.value = '';
                 })
