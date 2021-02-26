@@ -1,13 +1,26 @@
-function regFromHome1(){    regCompany('Basic');            }
-function regFromHome2(){    regCompany('Intermediate');     }
-function regFromHome3(){    regCompany('Advanced');         }
+// document.getElementById('chooseBeg').addEventListener('click', () => {    
+//     regCompany('Basic');            
+// });
+// document.getElementById('choooseInd').addEventListener('click', () => {    
+//     regCompany('Intermediate');     
+// });
+// document.getElementById('chooseAdv').addEventListener('click', () => {    
+//     regCompany('Advanced');         
+// });
 
-function regCompany(pt) {
+
+b="";
+function regFromHome1(){    b="Basic";                      }
+function regFromHome2(){    b="Intermediate";     }
+function regFromHome3(){    b="Advanced";         }
+
+
+function regCompany() {
     let items = document.querySelectorAll(".validate");
     items.forEach(elt => {
         itemsArray.push(elt.value)
     });
-
+    let a = Math.round(Math.random() * 3);
     for (let i = 5; i < 11; i++) {
         if (itemsArray[i] == "") {
             fieldsArray[i] = "placeholder"
@@ -36,9 +49,11 @@ function regCompany(pt) {
             username : companyData.compUserName,
         }
 
+        b = (a==2)?"Basic":(a==1)?"Intermediate":"Advanced";
         proinfo = {
             username: companyData.compUserName,
-            packageUsed: pt,
+            packagesUsed: b,
+            platformsUsed: "",
         }
 
         if (itemsArray[9] == itemsArray[10]) {

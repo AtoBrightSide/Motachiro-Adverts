@@ -6,11 +6,13 @@ function showAdmin() {
     allUsers();
 }
 
-function elUsers(names, pck){
+function elUsers(names, pck, pm){
     let cl = document.getElementById('cL');
     cl.innerHTML += `<li class="collection-item">${names}</li>`;
     let cl2 = document.getElementById('cL2');
     cl2.innerHTML += `<li class="collection-item">${pck}</li>`;
+    let cl3 = document.getElementById('cL3');
+    cl3.innerHTML += `<li class="collection-item">${pm}</li>`;
 }
 
 function allUsers(){
@@ -18,7 +20,7 @@ function allUsers(){
     trs2.openCursor().onsuccess = function (e) {
         var cursor = e.target.result;
         if(cursor){
-            elUsers(cursor.value.username, cursor.value.packageUsed);
+            elUsers(cursor.value.username, cursor.value.packagesUsed, cursor.value.platformsUsed);
             cursor.continue();
         }
     }
