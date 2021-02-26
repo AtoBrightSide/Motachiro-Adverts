@@ -66,9 +66,6 @@ function createUser(objName, store, mode){
 
   req.onsuccess = () => {
       alert("youve successfuly registered on our site.");
-      // items.forEach(elts => {
-      //     elts.value = '';
-      // })
   };
 }
 
@@ -77,9 +74,7 @@ function loginInfo(userInfo){
   let obj2 = tx2.objectStore('LoginInfo');
   let req2 = obj2.add(userInfo);
   req2.onsuccess = () => {
-    // items.forEach(elts => {
-    //     elts.value = '';
-    // })
+
   };
 }
 
@@ -88,8 +83,19 @@ function clientInfo(client) {
   let obj3 = tx3.objectStore('ProfileInfo');
   let req3 = obj3.add(client);
 
-  // req3.onsuccess = () => {
-  //     items.forEach(elts => {
-  //         elts.value = '';
-  //     })
-  }
+  req3.onsuccess = () => {
+    
+  };
+  
+}
+
+function theLocalStorage(obj, data){
+  localStorage.setItem(obj, data);
+}
+
+function clrLocalStorage(obj){
+
+}
+function getFromLocal(obj){
+  return localStorage.getItem(obj);
+}

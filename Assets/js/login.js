@@ -29,7 +29,8 @@ function loginUser() {
                 thepword.value = '';
                 count = 0;
                 actualLength = 0;
-                // n.newName = "user";
+                theLocalStorage('username',uN);
+
                 location.assign('accounts.html');
                 return 0;
             }
