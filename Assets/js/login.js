@@ -29,13 +29,13 @@ function loginUser() {
                 thepword.value = '';
                 count = 0;
                 actualLength = 0;
-                theLocalStorage('username',uN);
+                theLocalStorage('username', uN);
 
                 location.assign('accounts.html');
                 return 0;
             }
 
-            else        actualLength++
+            else actualLength++
             cursor.continue();
         }
         else {
@@ -84,8 +84,8 @@ function loginAdmin() {
                 console.log("NO DATA IN DB");
                 count = 0;
                 actualLength = 0;
-                thepword.style.borderColor = "red";
-                theuserName.style.borderColor = "red";
+                theAdmin.style.borderColor = "red";
+                theAdminPass.style.borderColor = "red";
                 loginMessage.className = "red-text text-accent-2";
                 loginMessage.innerHTML = "Incorrect entry, try again?";
             }
