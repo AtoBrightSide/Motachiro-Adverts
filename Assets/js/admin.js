@@ -6,8 +6,13 @@ function showAdmin() {
     allUsers();
 }
 
-function elUsers(names, pck, pm) {
+function showAll(names, user) {
     let cl = document.getElementById('cL');
+    cl.innerHTML += `<li class="collection-item"><pre>${names}                  ${user}</pre></li>`;
+}
+
+function elUsers(names, username) {
+    let cl = document.getElementById('cL2');
     cl.innerHTML += `<li class="collection-item">${names}</li>`;
     let cl3 = document.getElementById('cL3');
     cl3.innerHTML += `<li class="collection-item">${pm}</li>`;
@@ -27,7 +32,15 @@ function allUsers() {
     trs3.openCursor().onsuccess = function (e) {
         var cursor = e.target.result;
         if (cursor) {
-            elUsers(cursor.value.username, cursor.value.packagesUsed, cursor.value.platformsUsed);
+            showAll((cursor.value.fname + " " + cursor.value.lname), cursor.value.username_Email);
+            cursor.continue();
+        }
+    }
+    let trs4 = DB.transaction(['AccountsCompany'], 'readonly').objectStore('A');
+    trs4.openCursor().onsuccess = function (e) {
+        var cursor = e.target.result;
+        if (cursor) {
+            showAll((cursor.value.fname + " " + cursor.value.lname), cursor.value.username_Email);
             cursor.continue();
         }
     }
