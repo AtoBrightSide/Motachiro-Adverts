@@ -1,17 +1,18 @@
 // var isDone;
 var accName = localStorage.getItem('username');
 document.getElementById('accountHeader').innerHTML = `Hello ${accName}`;
+document.getElementById('user-name').innerHTML = accName;
 // document.getElementById('choosePlatforms').addEventListener('click', buttonClicked);
-showUser();
-
+setTimeout(showUser, 100);
+var myPlats = platformsChosen();
 function showUser() {
-    if(JSON.parse(getFromLocal('userProfiles')) )
+    if (JSON.parse(getFromLocal('userProfiles')))
         stuff();
     // else
     //     finished();
 }
 
-function platformsChosen(){
+function platformsChosen() {
     let platformsArray = [];
     const platforms = document.querySelectorAll('input[name="platform"]:checked');
     platforms.forEach(element => {
@@ -20,18 +21,18 @@ function platformsChosen(){
 
     theLocalStorage('platforms', JSON.stringify(platformsArray));
 
-    return platformsArray; 
+    return platformsArray;
 }
 
 function buttonClicked() {
-    var myPlats = platformsChosen();
-    (myPlats.length)?stuff():alert('Nothing has been selected')
+
+    (myPlats.length) ? stuff() : alert('Nothing has been selected')
 }
 
 function stuff() {
     var myPlats = JSON.parse(getFromLocal('platforms'));
-    
-    document.getElementById('user-name').innerHTML = accName;
+
+
     document.querySelector('.container').innerHTML = ' ';
     document.getElementById('accountMiniHeader').innerHTML = 'You have chosen platforms';
 
@@ -43,7 +44,7 @@ function stuff() {
         packagesUsed: "",
         platformsUsed: myPlats,
     }
-    
+
     clientInfo(accProfile);
     theLocalStorage('userProfiles', JSON.stringify(accProfile));
 
