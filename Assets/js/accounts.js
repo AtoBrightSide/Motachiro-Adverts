@@ -1,15 +1,13 @@
-// var isDone;
 var accName = localStorage.getItem('username');
 document.getElementById('accountHeader').innerHTML = `Hello ${accName}`;
 document.getElementById('user-name').innerHTML = accName;
-// document.getElementById('choosePlatforms').addEventListener('click', buttonClicked);
+document.getElementById('choosePlatforms').addEventListener('click', buttonClicked);
+
 setTimeout(showUser, 100);
-var myPlats = platformsChosen();
+
 function showUser() {
     if (JSON.parse(getFromLocal('userProfiles')))
         stuff();
-    // else
-    //     finished();
 }
 
 function platformsChosen() {
@@ -25,13 +23,12 @@ function platformsChosen() {
 }
 
 function buttonClicked() {
-
+    var myPlats = platformsChosen();
     (myPlats.length) ? stuff() : alert('Nothing has been selected')
 }
 
 function stuff() {
     var myPlats = JSON.parse(getFromLocal('platforms'));
-
 
     document.querySelector('.container').innerHTML = ' ';
     document.getElementById('accountMiniHeader').innerHTML = 'You have chosen platforms';
