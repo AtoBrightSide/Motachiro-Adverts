@@ -40,7 +40,7 @@ function allUsers() {
     trs4.openCursor().onsuccess = function (e) {
         var cursor = e.target.result;
         if (cursor) {
-            showAll((cursor.value.fname + " " + cursor.value.lname), cursor.value.username_Email);
+            showAll2((cursor.value.companyName, cursor.value.company_Email, cursor.value.compUserName));
             cursor.continue();
         }
     }
