@@ -13,6 +13,11 @@ function showAll(names, user) {
     cl2.innerHTML += `<li class="collection-item"><pre>${names}                  ${user}</pre></li>`;
 }
 
+function showAll2(names, compEmail, compUser) {
+    let cl = document.getElementById('cL2');
+    cl.innerHTML += `<li class="collection-item"><pre>${names}                  ${compEmail}                 ${compUser}</pre></li>`;
+}
+
 function elUsers(names, pm) {
     let cl3 = document.getElementById('cL3');
     cl3.innerHTML += `<li class="collection-item">${pm}</li>`;
