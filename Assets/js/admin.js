@@ -9,11 +9,11 @@ function showAdmin() {
 function showAll(names, user) {
     let cl = document.getElementById('cL');
     cl.innerHTML += `<li class="collection-item"><pre>${names}                  ${user}</pre></li>`;
+    let cl2 = document.getElementById('cL2');
+    cl2.innerHTML += `<li class="collection-item"><pre>${names}                  ${user}</pre></li>`;
 }
 
-function elUsers(names, username) {
-    let cl = document.getElementById('cL2');
-    cl.innerHTML += `<li class="collection-item">${names}</li>`;
+function elUsers(names, pm) {
     let cl3 = document.getElementById('cL3');
     cl3.innerHTML += `<li class="collection-item">${pm}</li>`;
 }
